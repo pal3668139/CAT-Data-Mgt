@@ -3,3 +3,5 @@ This project automates steps needed to manage the data that we get from each 350
 We may need to extract data for a particular survey more than once, which requires the project to merge new rows of survey data into the BigQuery tables using a Key ID.
 
 Additional data sources related to this survey data including detailed user data from Action Network and bill data from Take Action Netork (TAN) that we will need in related BigQuery tables.
+
+PLEASE NOTE: Please find the initial Python Pandas code in the 'notebooks' folder, and find relevant .CSVs in the 'data' folder. Please ignore the files in the 'src' and 'tests' folders.
