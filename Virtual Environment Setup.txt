@@ -2,6 +2,6 @@ C:\Users\peter>D:
 
 D:\> cd D:\Users\peter\PythonProjects\PandasTest
 
-D:\Users\peter\PythonProjects\PandasTest>venv\Scripts\activate
+venv\Scripts\activate
 
 (venv) D:\Users\peter\PythonProjects\PandasTest>
