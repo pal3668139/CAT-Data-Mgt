@@ -5,3 +5,33 @@ D:\> cd D:\Users\peter\PythonProjects\PandasTest
 venv\Scripts\activate
 
 (venv) D:\Users\peter\PythonProjects\PandasTest>
+
+
+
+"sign in for",G5)), "Sign in"
+"sign in OR",G5)), "Sign in OR Written Testimony"
+"email the",G5)), "Email"
+"leave a comment for",G5)), "Written Testimony"
+"send a comment to",G5)), "Comment to District Legislator"
+"form email",G5)), "Partner Form Email"
+
+
+Contact Type
+If 'Attribute Type' = 'Action Verification' then
+	If 'Value' = '' then 'Action Type' = ''
+	else if 'Action Type' = 'Sign in OR Written Testimony' then
+		If 'Value' contains 'and signed in' then 'Contact Type' = 'Sign in'
+		else if 'Value' contains 'and left a comment' then 'Contact Type' = 'Written Testimony'
+	else if 'Attribute' contains "sign in for" then 'Content Type' = 'Sign in'
+	else if 'Attribute' contains "email the" then 'Content Type' = 'Email'
+	else if 'Attribute' contains "leave a comment for" then 'Content Type' = 'Written Testimony'
+	else if 'Attribute' contains "send a comment to" then 'Content Type' = 'Comment to District Legislator'
+	else if 'Attribute' contains "form email" then 'Content Type' = 'Partner Form Email'
+
+Contact
+
+
+
+		
+
+
