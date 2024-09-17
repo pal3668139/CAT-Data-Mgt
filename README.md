@@ -17,6 +17,7 @@ Using the Tally Google Sheets integration (https://tally.so/help/google-sheets-i
  - Use Google Cloud Functions to periodically check for new sheets and pull the data into a Pandas DataFrame.
  - Store sheet metadata (file name, last processed timestamp) in a tracking system BigQuery table.
 
+
 2. Transform: Data Cleaning and Transformation
 Once the data is ingested, Pandas scripts will clean and normalize the raw Action Survey data.
  - Remove duplicates, handle missing values, and apply necessary validations.
@@ -24,11 +25,13 @@ Once the data is ingested, Pandas scripts will clean and normalize the raw Actio
  - Calculate new columns to facilitate data analysis.
  - NOTE: This process used to take the Data/Ops team over 30 minutes for each survey. The vastly improved process takes 1 second.
 
+
 3. Load: Storing Processed Data into Google BigQuery
 Pandas scripts will then automatically load the transformed data for the Action Survey into a Google BigQuery table (or tables).
  - Our Action Takers complete each action survey over a period of days.
  - For this reason, we will load data from each survey once per day for a period of 10 days after the Action Survey is published.
  - The Pandas script will load the DataFrame into a temporary table in BigQuery then, using a Key ID, merge new rows of data into the final BigQuery table.
+
 
 4. Automation: Orchestration with Cloud Functions and Cloud Scheduler
 CAT has a very predictable schedule for publishing Action Surveys twice per week during the legislative session. 
@@ -39,6 +42,7 @@ Based on our ingestion schedule for each Action Surveys, we will:
  - Create a separate Cloud Scheduler job for each Action Survey (once per day for 10 days after the survey is published)
  - Setup the Cloud Scheduler jobs to trigger the Pandas script, which ingests, cleans and transforms, and loads our Action Survey data in BigQuery
  - For the long legislative session, there will be about 30 Cloud Scheduler jobs to manage
+
 
 5. Data Availability and Analysis
 The final BigQuery tables will be accessible via Google Sheets using the BigQuery data connector (https://support.google.com/docs/topic/9699960). This provides easy access for team members to analyze the data in real-time from Google Sheets.
