@@ -35,10 +35,10 @@ CAT has a very predictable schedule for publishing Action Surveys twice per week
  - Each Action Survey also uses a standard naming convention such as "Week 05, Wednesday February 5, 2025." 
  - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey: Once per day for 10 days after the survey is published.
 
-Based on our ingestion schedule for each Action Surveys, we will:
- - Create a separate Cloud Scheduler job for each Action Survey (once per day for 10 days after the survey is published)
- - Setup the Cloud Scheduler jobs to trigger the Pandas script, which ingests, cleans and transforms, and loads our Action Survey data in BigQuery
- - For the long legislative session, there will be about 30 Cloud Scheduler jobs to manage
+Based on our ingestion schedule for each Action Survey, we will:
+ - Create a separate Cloud Scheduler job for each Action Survey (once per day for 10 days after the survey is published).
+ - Setup the Cloud Scheduler jobs to trigger the Pandas script, which ingests, cleans, transforms, and loads our Action Survey data in BigQuery.
+ - For the long legislative session, there will be about 30 Cloud Scheduler jobs to manage.
 
 ### 5. Data Availability and Analysis
 The final BigQuery tables will be accessible via Google Sheets using the BigQuery data connector (https://support.google.com/docs/topic/9699960). This provides easy access for team members to analyze the data in real-time from Google Sheets.
