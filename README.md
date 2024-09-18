@@ -1,10 +1,10 @@
-This project automates steps needed to manage the data that we get from each 350 Seattle CAT Action Survey. The approach provides a fully automated pipeline that:
- - Tally will automatically store action survey responses in Google Sheets using a free integration.
- - Ingests Action Survey data directly from Google Sheets integrated with Tally.
- - Cleans and transforms the data using Python Pandas.
- - Efficiently loads new rows into BigQuery with upsert functionality.
- - Automates the entire process using Google Cloud Functions and Cloud Scheduler, respecting your predictable data schedule.
- - Provides access to the CAT team in Google Sheets using a Google Sheets data connector for BigQuery.
+This project automates steps needed to manage the data that we get from each 350 Seattle CAT Action Survey. The approach provides a fully automated pipeline that will:
+ - Automatically store Action Survey responses in Google Sheets using a free integration in Tally.
+ - Ingest the raw Action Survey data directly from each Google Sheet file.
+ - Clean, transform, and normalize the raw data using Python Pandas scripts.
+ - Load the normalized Action Survey data into Google BigQuery tables.
+ - Automate the entire ingest, transform, and load process using Google Cloud Functions and Cloud Scheduler.
+ - Provide the CAT team complete access to our survey data in Google Sheets using a Google Sheets data connector for BigQuery.
 
 PLEASE NOTE: Please find the Python Pandas code in the 'notebooks' folder, and find relevant .CSVs in the 'data' folder. Please ignore the files in the 'src' and 'tests' folders.
 
