@@ -33,7 +33,7 @@ Pandas scripts will then automatically load the transformed data for the Action 
 ### 4. Automation: Orchestration with Cloud Functions and Cloud Scheduler
 CAT has a very predictable schedule for publishing Action Surveys twice per week during the legislative session. 
  - Each Action Survey also uses a standard naming convention such as "Week 05, Wednesday February 5, 2025." 
- - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey: Once per day for 10 days after the survey is published.
+ - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey.
 
 Based on our ingestion schedule for each Action Survey, we will:
  - Create a separate Cloud Scheduler job for each Action Survey (once per day for 10 days after the survey is published).
