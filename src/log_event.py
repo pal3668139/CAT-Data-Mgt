@@ -9,11 +9,11 @@ cloud_logger = cloud_logging.Client().logger("etl_pipeline_logs")
 
 # Set up Google Drive API credentials
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
-creds = Credentials.from_service_account_file('path/to/your/service-account.json', scopes=SCOPES)
+creds = Credentials.from_service_account_file('D:/Users/peter/PythonProjects/PandasTest/neat-simplicity-425622-v1-b1e259b0c18a.json', scopes=SCOPES)
 drive_service = build('drive', 'v3', credentials=creds)
 
 # Define the Google Drive file ID for the JSON log file
-LOG_FILE_ID = 'your-log-file-id'  # Replace with actual file ID on Google Drive
+LOG_FILE_ID = '1yYE44-gMI1EmtUaLpd0pCIihQK4YwcBc'  # Replace with actual file ID on Google Drive
 
 def log_event(log_level, component, message, additional_data=None, log_to_cloud=True):
     """Logs events to Google Cloud Logging and optionally to a JSON file on Google Drive."""

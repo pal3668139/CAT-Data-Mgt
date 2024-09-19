@@ -3,12 +3,12 @@ This project automates steps needed to manage the data that we get from each 350
  - Ingest the raw Action Survey data directly from each Google Sheet file.
  - Clean, transform, and normalize the raw data using Python Pandas scripts.
  - Load the normalized Action Survey data into Google BigQuery tables.
- - Automate the entire ingest, transform, and load process using Google Cloud Functions and Cloud Scheduler.
- - Provide the CAT team complete access to our survey data in Google Sheets using a Google Sheets data connector for BigQuery.
+ - Automate the ingest, transform, and load process using Google Cloud Functions and Cloud Scheduler.
+ - Provide the CAT team access to our survey data in Google Sheets using a Google Sheets data connector for BigQuery.
 
-PLEASE NOTE: A brief description of files in each folder.
- - data - Find relevant .CSVs
- - notebooks - Functioning Python Pandas code that ingests, cleans, and transforms Tally data from .CSV files
+PLEASE NOTE: Brief description of files in each folder.
+ - data - Prototype normalized data structure, downloaded Tally .CSVs from 2024 legislative session, and more.
+ - notebooks - Functioning Python Pandas code that ingests, cleans, and transforms Tally .CSVs
  - src - Early draft Python files that represent the end-state application
 
 Here's a more detailed project description.
