@@ -6,7 +6,11 @@ This project automates steps needed to manage the data that we get from each 350
  - Automate the entire ingest, transform, and load process using Google Cloud Functions and Cloud Scheduler.
  - Provide the CAT team complete access to our survey data in Google Sheets using a Google Sheets data connector for BigQuery.
 
-PLEASE NOTE: Please find the Python Pandas code in the 'notebooks' folder, and find relevant .CSVs in the 'data' folder. Please ignore the files in the 'src' and 'tests' folders.
+PLEASE NOTE: A brief description of files in each folder.
+ - data - Find relevant .CSVs
+ - notebooks - Functioning Python Pandas code that ingests, cleans, and transforms Tally data from .CSV files
+ - src - Early draft Python files that represent the end-state application framework
+ - tests - Empty
 
 Here's a more detailed project description.
 
