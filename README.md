@@ -30,22 +30,21 @@ Once the data is ingested, Pandas scripts will clean and normalize the raw Actio
 ### 3. Load: Storing Processed Data into Google BigQuery
 Pandas scripts will then automatically load the transformed data for the Action Survey into a Google BigQuery table (or tables).
  - Our Action Takers complete each action survey over a period of days.
- - For this reason, we will load data from each survey once per day for a period of 10 days after the Action Survey is published.
+ - For this reason, we will process data from each Action Survey once per day for 10 days after it is published.
  - The Pandas script will load the DataFrame into a temporary table in BigQuery then, using a Key ID, merge new rows of data into the final BigQuery table.
 
 ### 4. Automation: Orchestration with Cloud Functions and Cloud Scheduler
 CAT has a very predictable schedule for publishing Action Surveys twice per week during the legislative session. 
- - Each Action Survey also uses a standard naming convention such as "Week 05, Wednesday February 5, 2025." 
- - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey.
+ - Each Action Survey also uses a standard naming convention such as "Week-05-Sun" and "Week-05-Wed."
+ - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey. We will process data from each Action Survey once per day for 10 days after it is published.
 
 Based on our ingestion schedule for each Action Survey, we will:
- - Create a separate Cloud Scheduler job for each Action Survey (once per day for 10 days after the survey is published).
- - Setup the Cloud Scheduler jobs to trigger the Pandas script, which ingests, cleans, transforms, and loads our Action Survey data in BigQuery.
- - For the long legislative session, there will be about 30 Cloud Scheduler jobs to manage.
+ - Create a separate Cloud Scheduler job.
+ - Setup the Cloud Scheduler jobs to trigger the Cloud Functions that ingest, transform, and load our survey data in BigQuery.
+ - For the long legislative session, there will be about 32 Cloud Scheduler jobs to manage.
 
 ### 5. Data Availability and Analysis
-The final BigQuery tables will be accessible via Google Sheets using the BigQuery data connector (https://support.google.com/docs/topic/9699960). This provides easy access for team members to analyze the data in real-time from Google Sheets.
- - Instruct team members on how to connect Google Sheets to BigQuery using the Data > Data connector > BigQuery feature.
- - Use this to query the BigQuery tables directly from Google Sheets for analysis.
+The final BigQuery tables will be accessible via Google Sheets using the BigQuery data connector (https://support.google.com/docs/topic/9699960). 
+ - CAT team members will be able to view and analyze the data in real-time from Google Sheets.
 
 There are additional data sources related to Action Survey data including detailed user data from Action Network and bill data from Take Action Netork (TAN). Time permitting, we will load these data sources in related BigQuery tables.
