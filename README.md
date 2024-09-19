@@ -9,8 +9,7 @@ This project automates steps needed to manage the data that we get from each 350
 PLEASE NOTE: A brief description of files in each folder.
  - data - Find relevant .CSVs
  - notebooks - Functioning Python Pandas code that ingests, cleans, and transforms Tally data from .CSV files
- - src - Early draft Python files that represent the end-state application framework
- - tests - Empty
+ - src - Early draft Python files that represent the end-state application
 
 Here's a more detailed project description.
 
