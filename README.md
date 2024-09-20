@@ -27,7 +27,7 @@ Once the data is ingested, Cloud Functions will clean and normalize the raw Acti
 
 ### 3. Load: Storing Processed Data into Google BigQuery
 A Cloud Function will then automatically load the transformed DataFrame into a Google BigQuery table (or tables).
- - Our Action Takers complete each action survey over a period of days.
+ - Our users complete each Action Survey over a period of days.
  - For this reason, we will process data from each Action Survey once per day for 10 days after it is published.
  - The Cloud Function will load the DataFrame into a temporary table in BigQuery.
  - Using a Key ID, the function will then merge rows (new rows only) from the temporary table into a final BigQuery table.
