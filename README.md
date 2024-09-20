@@ -15,7 +15,7 @@ Here's a more detailed project description.
 
 ### 1. Extract: Data Ingestion from Google Sheets
 Using the Tally Google Sheets integration (https://tally.so/help/google-sheets-integration), our raw Action Survey data will be stored in Google Sheets files on our Google Drive. The first step is to automate the extraction of these Google Sheets directly into a DataFrame. 
- - Identify new Google Sheets files based on the naming convention (e.g., 'Week 05, Wednesday February 5, 2025').
+ - Identify new Google Sheets files based on the naming convention (e.g. "Week-05-Sun" and "Week-05-Wed").
  - Use Google Drive API and Google Sheets API to fetch Google Sheets programmatically and pull the data into a DataFrame
 
 ### 2. Transform: Data Cleaning and Transformation
@@ -34,7 +34,7 @@ A Cloud Function will then automatically load the transformed DataFrame into a G
 
 ### 4. Automation: Orchestration with Cloud Functions and Cloud Scheduler
 CAT has a very predictable schedule for publishing Action Surveys twice per week during the legislative session. 
- - Each Action Survey also uses a standard naming convention such as "Week-05-Sun" and "Week-05-Wed."
+ - Each Action Survey also uses a standard naming convention (e.g. "Week-05-Sun" and "Week-05-Wed").
  - Using this schedule and standard naming conventions, we will define an ingestion schedule for each Action Survey.
  - The ingestion schedule: Process data from each Action Survey once per day for 10 days after it is published.
 
