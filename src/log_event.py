@@ -13,12 +13,11 @@ creds = Credentials.from_service_account_file('D:/Users/peter/PythonProjects/Pan
 drive_service = build('drive', 'v3', credentials=creds)
 
 # Define the Google Drive file ID for the JSON log file
-LOG_FILE_ID = '1yYE44-gMI1EmtUaLpd0pCIihQK4YwcBc'  # Replace with actual file ID on Google Drive
+LOG_FILE_ID = 'your-log-file-id'  # Replace with actual file ID on Google Drive
 
 def log_event(log_level, component, message, additional_data=None, log_to_cloud=True):
     """Logs events to Google Cloud Logging and optionally to a JSON file on Google Drive."""
     
-    # Log entry structure
     log_entry = {
         "timestamp": datetime.utcnow().isoformat(),
         "log_level": log_level,
@@ -47,3 +46,14 @@ def log_event(log_level, component, message, additional_data=None, log_to_cloud=
 
     except Exception as e:
         print(f"Failed to log to Google Drive: {e}")
+
+def log_api_error(component, error):
+    """Logs errors related to Google Cloud APIs, capturing metadata and error details."""
+    error_message = {
+        "error_type": type(error).__name__,
+        "message": str(error),
+        "component": component
+    }
+    # Use Google Cloud Logging to capture API errors with metadata
+    cloud_logger.log_struct(error_message, severity="ERROR")
+    print(f"Logged API error: {error_message}")
